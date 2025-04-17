@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+}
+
+:root {
+    --cor-azul_claro: #4ed0c0;
+    --cor-verde_neon: #0f0;
+    --cor-verde_escuro: #3cbba7;
+    --cor-branco: #fff;
+    --cor-preto_background: rgb(39, 38, 38);
+    --cor-preto_background_claro: #4d4848;
+    --cor-preto_escuro: #000000;
+    --cor-laranja: #ff8c00;
+}
+
+body{
+    background-color: var(--cor-preto_background_claro);
+    color: var(--cor-branco);
+    display: grid;
+    grid-template-areas: "header"
+                         "text"
+                         "main";
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    
+}
+
+header{
+    text-align: center;
+    grid-area: header;
+}
+
+h1{
+    font-size: 2rem;
+    color: var(--cor-azul_claro);
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto; /* Números | Operações */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+}
+
+.grid_calculator {
+    display: grid;
+    grid-template-columns: repeat(3, 60px); /* 3 colunas para os números */
+    grid-auto-rows: 60px;
+    gap: 10px;
+    
+}
+
+.operations_calculator {
+    display: grid;
+    grid-template-columns: 60px;
+    grid-auto-rows: 60px;
+    gap: 10px;
+    
+
+}
+
+.operations_items {
+    border: none;
+    border-radius: 8px;
+    
+}
+
+.numbers {
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.numbers:hover {
+    background-color: #ccc;
+}
+
+#number-0{
+    grid-column: span 3; /* O botão 0 ocupa duas colunas */
+    background-color: var(--cor-verde_escuro);
+
+}
+
+#calculate{
+    background-color: var(--cor-laranja);
+    color: var(--cor-preto_escuro);
+}
+    
