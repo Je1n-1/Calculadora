@@ -37,11 +37,14 @@ body {
         "display"
         "text"
         "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     align-items: center;
     justify-items: center;
     height: 100vh;
     width: 100vw;
     padding: 10px;
+    position: relative;
 }
 
 header {
@@ -65,7 +68,7 @@ h1 {
     width: 250px;
     height: 60px;
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin: 20px 0;
@@ -133,4 +136,25 @@ h1 {
 #calculate {
     background-color: var(--cor-laranja);
     color: var(--cor-preto_escuro);
+}
+
+.history_calculator {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+
+.history_calculator ul ::before {
+    content: "";
+    
+}
+    
+.history_calculator ul::after {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--cor-laranja);
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
