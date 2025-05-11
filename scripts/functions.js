@@ -1,6 +1,6 @@
 
 
-function onClickNumber(number) {
+export function onClickNumber(number) {
     if (display.textContent === "0") {
         display.textContent = number.toString();  // Se a tela mostrar "0", substitui pelo número clicado
         
@@ -11,7 +11,7 @@ function onClickNumber(number) {
 }
 
 // Função chamada ao clicar no botão de porcentagem
-function onClickPorcent() {
+export function onClickPorcent() {
     console.log("Botão de porcentagem clicado");
     if (display.textContent !== "0") {
         const number = parseFloat(display.textContent);  // Converte o texto atual da tela para número
@@ -20,7 +20,7 @@ function onClickPorcent() {
 }
 
 // Função chamada ao clicar no botão de igual
-function onClickEqual() {
+export function onClickEqual() {
     console.log("Botão de igual clicado");
     try {
         display.textContent = eval(display.textContent);  // Avalia a expressão na tela (como se fosse uma expressão matemática)
@@ -32,7 +32,7 @@ function onClickEqual() {
 }
 
 // Função chamada ao clicar nos operadores (+, -, *, /)
-function onClickOperator(operator) {
+export function onClickOperator(operator) {
     console.log(`Operador clicado: ${operator}`);
     currentOperator = operator;  // Armazena o operador atual
     const lastChar = display.textContent.slice(-1);  // Pega o último caractere da expressão
@@ -46,7 +46,7 @@ function onClickOperator(operator) {
 }
 
 // Função chamada ao clicar no botão de parênteses
-function onClickParenthesis() {
+export function onClickParenthesis() {
     caracteres = numberParentheses.textContent;  // Conta quantos caracteres existem no botão de parênteses
     const text = display.textContent;
     const open = text.split("(").length - 1;  // Conta quantos parênteses de abertura existem
@@ -63,7 +63,7 @@ function onClickParenthesis() {
     }
 }
 
-function addToHistory() {
+export function addToHistory() {
     const historyItem = document.createElement("li");
     historyItem.textContent = display.textContent;
     currentNumberHistory.appendChild(historyItem);  // Adiciona o item ao histórico
