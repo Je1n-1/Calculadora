@@ -139,22 +139,22 @@ h1 {
 }
 
 .history_calculator {
-    display: block;
     position: absolute;
     top: 30px;
     right: 40px;
+    background-color: var(--cor-preto_background_claro);
+    padding: 10px;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
-.history_calculator ul ::before {
-    content: "";
-    
-}
-    
-.history_calculator ul::after {
-    list-style: none;
+.history_list {
     padding: 0;
     margin: 0;
-    background-color: var(--cor-laranja);
-    border-radius: 8px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.history_list li {
+    padding: 5px;
+    border-bottom: 1px solid var(--cor-azul_claro);
 }

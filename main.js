@@ -1,13 +1,19 @@
+import "./scripts/numbers.js";
+import "./scripts/events.js";
+import "./scripts/operators.js";
+import "./scripts/parentheses.js";
+import "./scripts/history.js";
+
 // Definição dos IDs dos botões
 const buttons = {
-    clear: "clear",          // Botão de limpar
-    porcent: "porcent",      // Botão de porcentagem
-    calculate: "calculate",  // Botão de igual (calcular)
-    add: "add",              // Botão de adição
-    subtract: "subtract",    // Botão de subtração
-    multiply: "multiply",    // Botão de multiplicação
-    divide: "divide",        // Botão de divisão
-    parenthesis: "parenthesis" // Botão de parênteses
+    clear: "clear",
+    porcent: "porcent",
+    calculate: "calculate",
+    add: "add",
+    subtract: "subtract",
+    multiply: "multiply",
+    divide: "divide",
+    parenthesis: "parenthesis"
 };
 
 // Desestruturação para mapear cada botão ao seu respectivo elemento HTML
@@ -23,11 +29,15 @@ const {
 } = Object.fromEntries(
     Object.entries(buttons).map(([key, id]) => [key, document.getElementById(id)])
 );
-//variáveis para armazenar o número atual da tela no histórico e etc...
+
+// Variáveis para armazenar o número atual da tela no histórico e etc...
+
+// Objeto que armazena o histórico
 let currentNumberHistory = document.getElementById("history_list");
 let currentNumber = 0, currentOperator = "", currentExpression = "", caracteres = 0;
-let history = [currentNumber, currentOperator, currentExpression];  // Array para armazenar o histórico de operações
-// Objeto que armazena os números, e o display da calculadora
+// Removed unused 'history' variable to resolve the error
+
+// Objeto que armazena os números e o display da calculadora
 const numbers = {};
 const display = document.getElementById("display");
 
@@ -36,6 +46,15 @@ for (let i = 0; i <= 9; i++) {
     numbers[i] = document.getElementById(`number-${i}`);
     if (numbers[i]) {
         numbers[i].addEventListener("click", () => onClickNumber(i));  // Quando um número é clicado, chama a função onClickNumber
+    } else {
+        console.error(`Element with ID 'number-${i}' not found.`);
     }
 }
 
+export {
+    display,
+    numberClear, numberPorcent, numberEqual,
+    numberAdd, numberSub, numberMult, numberDiv, numberParentheses,
+    currentNumberHistory,
+    caracteres
+};
