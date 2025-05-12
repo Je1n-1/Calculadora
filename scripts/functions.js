@@ -1,5 +1,3 @@
-
-
 export function onClickNumber(number) {
     if (display.textContent === "0") {
         display.textContent = number.toString();  // Se a tela mostrar "0", substitui pelo número clicado

@@ -1,4 +1,4 @@
-import { display } from "../main.js";
+import { display } from "./main.js";
 
 export function onClickNumber(number) {
     if (display.textContent === "0") {

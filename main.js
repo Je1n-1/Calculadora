@@ -1,57 +1,61 @@
-import "./scripts/numbers.js";
-import "./scripts/events.js";
-import "./scripts/operators.js";
-import "./scripts/parentheses.js";
-import "./scripts/history.js";
-import "./scripts/functions.js";
+import {
+  display,
+  numberClear, numberPorcent, numberEqual,
+  numberAdd, numberSub, numberMult, numberDiv, numberParentheses,
+  currentNumberHistory,
+  numbers
+} from "./scripts/elements.js";
 
-// Definição dos IDs dos botões
-// Definição dos IDs dos botões
-const buttons = {
-    clear: "clear",          // Botão de limpar
-    porcent: "porcent",      // Botão de porcentagem
-    calculate: "calculate",  // Botão de igual (calcular)
-    add: "add",              // Botão de adição
-    subtract: "subtract",    // Botão de subtração
-    multiply: "multiply",    // Botão de multiplicação
-    divide: "divide",        // Botão de divisão
-    parenthesis: "parenthesis" // Botão de parênteses
-};
+import { onClickNumber } from "./scripts/numbers.js";
+import { onClickPorcent, onClickEqual, onClickOperator } from "./scripts/operators.js";
+import { onClickParenthesis } from "./scripts/parentheses.js";
 
-// Desestruturação para mapear cada botão ao seu respectivo elemento HTML
-const {
-    clear: numberClear,
-    porcent: numberPorcent,
-    calculate: numberEqual,
-    add: numberAdd,
-    subtract: numberSub,
-    multiply: numberMult,
-    divide: numberDiv,
-    parenthesis: numberParentheses
-} = Object.fromEntries(
-    Object.entries(buttons).map(([key, id]) => [key, document.getElementById(id)])
-);
-//variáveis para armazenar o número atual da tela no histórico e etc...
-let currentNumberHistory = document.getElementById("history_list");
-let currentNumber = 0, currentOperator = "", currentExpression = "", caracteres = 0;
+// Aguarda o carregamento da página
+if (typeof window !== "undefined") {
+    window.addEventListener("load", () => {
+        console.log("Página carregada com sucesso.");
+    });
+} else {
+    console.error("Não foi possível carregar a página.");
+}
 
-// Objeto que armazena os números, e o display da calculadora
-const numbers = {};
-const display = document.getElementById("display");
-
-// Adiciona evento de clique para cada botão de número de 0 a 9
+// Eventos para botões de número
 for (let i = 0; i <= 9; i++) {
-    numbers[i] = document.getElementById(`number-${i}`);
     if (numbers[i]) {
-        numbers[i].addEventListener("click", () => onClickNumber(i));  // Quando um número é clicado, chama a função onClickNumber
+        numbers[i].addEventListener("click", () => onClickNumber(i));
+        console.log(`Número ${i} adicionado ao evento de clique`);
     }
 }
 
+// Eventos para operadores
+numberClear?.addEventListener("click", () => {
+    display.textContent = "0";
+});
 
-export {
-    display,
-    numberClear, numberPorcent, numberEqual,
-    numberAdd, numberSub, numberMult, numberDiv, numberParentheses,
-    currentNumberHistory,
-    caracteres
-};
+numberPorcent?.addEventListener("click", () => {
+    onClickPorcent();
+});
+
+numberEqual?.addEventListener("click", () => {
+    onClickEqual();
+});
+
+numberAdd?.addEventListener("click", () => {
+    onClickOperator("+");
+});
+
+numberSub?.addEventListener("click", () => {
+    onClickOperator("-");
+});
+
+numberMult?.addEventListener("click", () => {
+    onClickOperator("*");
+});
+
+numberDiv?.addEventListener("click", () => {
+    onClickOperator("/");
+});
+
+numberParentheses?.addEventListener("click", () => {
+    onClickParenthesis("");
+});

@@ -7,44 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="title_calculator">Calculadora</h1>
-        <p class="text_calculator">Desenvolvido por Je1n</p>
-        <p class="text_calculator">Versão 1.0</p>
-    </header>
-    <main>
-        <div id="display" class="display">0</div>
-        <div class="container">
-            <div class="grid_calculator">
-                <button class="operations_items" id="clear">C</button>
-                <button class="operations_items" id="parenthesis">()</button>
-                <button class="operations_items" id="porcent">%</button>
-                <button class="numbers" id="number-1">1</button>
-                <button class="numbers" id="number-2">2</button>
-                <button class="numbers" id="number-3">3</button>
-                <button class="numbers" id="number-4">4</button>
-                <button class="numbers" id="number-5">5</button>
-                <button class="numbers" id="number-6">6</button>
-                <button class="numbers" id="number-7">7</button>
-                <button class="numbers" id="number-8">8</button>
-                <button class="numbers" id="number-9">9</button>
-                <button class="numbers" id="number-0">0</button>
+        <header>
+            <h1 class="title_calculator">Calculadora</h1>
+            <p class="text_calculator">Desenvolvido por Je1n</p>
+            <p class="text_calculator">Versão 1.0</p>
+        </header>
+        <main>
+            <div id="display" class="display">0</div>
+            <div class="container">
+                <div class="grid_calculator">
+                    <button class="operations_items" id="clear">C</button>
+                    <button class="operations_items" id="parenthesis">()</button>
+                    <button class="operations_items" id="porcent">%</button>
+                    <button class="numbers" id="number-1">1</button>
+                    <button class="numbers" id="number-2">2</button>
+                    <button class="numbers" id="number-3">3</button>
+                    <button class="numbers" id="number-4">4</button>
+                    <button class="numbers" id="number-5">5</button>
+                    <button class="numbers" id="number-6">6</button>
+                    <button class="numbers" id="number-7">7</button>
+                    <button class="numbers" id="number-8">8</button>
+                    <button class="numbers" id="number-9">9</button>
+                    <button class="numbers" id="number-0">0</button>
+                </div>
+        
+                <div class="operations_calculator">
+                    <button class="operations_items" id="divide">/</button>
+                    <button class="operations_items" id="multiply">*</button>
+                    <button class="operations_items" id="add">+</button>
+                    <button class="operations_items" id="subtract">-</button>
+                    <button class="operations_items" id="calculate">=</button>
+                </div>
             </div>
-    
-            <div class="operations_calculator">
-                <button class="operations_items" id="divide">/</button>
-                <button class="operations_items" id="multiply">*</button>
-                <button class="operations_items" id="add">+</button>
-                <button class="operations_items" id="subtract">-</button>
-                <button class="operations_items" id="calculate">=</button>
-            </div>
-        </div>
-    </main>
-   <aside class="history_calculator">
+        </main>
+    <aside class="history_calculator">
         <h2 class="history_title">Histórico</h2>
         <ul class="history_list" id="history_list"></ul>
     </aside>
-    <script type="module" src="./main.js"></script>
 
+    
+    <script type="module" src="./main.js"></script>
 </body>
 </html>
