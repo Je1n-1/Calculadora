@@ -1,61 +1,45 @@
-import {
-  display,
-  numberClear, numberPorcent, numberEqual,
-  numberAdd, numberSub, numberMult, numberDiv, numberParentheses,
-  currentNumberHistory,
-  numbers
-} from "./scripts/elements.js";
+// Definição dos IDs dos botões
+const buttons = {
+    clear: "clear",
+    porcent: "porcent",
+    calculate: "calculate",
+    add: "add",
+    subtract: "subtract",
+    multiply: "multiply",
+    divide: "divide",
+    parenthesis: "parenthesis"
+};
 
-import { onClickNumber } from "./scripts/numbers.js";
-import { onClickPorcent, onClickEqual, onClickOperator } from "./scripts/operators.js";
-import { onClickParenthesis } from "./scripts/parentheses.js";
+const {
+    clear: numberClear,
+    porcent: numberPorcent,
+    calculate: numberEqual,
+    add: numberAdd,
+    subtract: numberSub,
+    multiply: numberMult,
+    divide: numberDiv,
+    parenthesis: numberParentheses
+} = Object.fromEntries(
+    Object.entries(buttons).map(([key, id]) => [key, document.getElementById(id)])
+);
 
-// Aguarda o carregamento da página
-if (typeof window !== "undefined") {
-    window.addEventListener("load", () => {
-        console.log("Página carregada com sucesso.");
-    });
-} else {
-    console.error("Não foi possível carregar a página.");
-}
+const numbers = {};
+const display = document.getElementById("display");
+let currentNumberHistory = document.getElementById("history_list");
 
-// Eventos para botões de número
+
 for (let i = 0; i <= 9; i++) {
+    numbers[i] = document.getElementById(`number-${i}`);
     if (numbers[i]) {
         numbers[i].addEventListener("click", () => onClickNumber(i));
-        console.log(`Número ${i} adicionado ao evento de clique`);
     }
 }
 
-// Eventos para operadores
-numberClear?.addEventListener("click", () => {
-    display.textContent = "0";
-});
-
-numberPorcent?.addEventListener("click", () => {
-    onClickPorcent();
-});
-
-numberEqual?.addEventListener("click", () => {
-    onClickEqual();
-});
-
-numberAdd?.addEventListener("click", () => {
-    onClickOperator("+");
-});
-
-numberSub?.addEventListener("click", () => {
-    onClickOperator("-");
-});
-
-numberMult?.addEventListener("click", () => {
-    onClickOperator("*");
-});
-
-numberDiv?.addEventListener("click", () => {
-    onClickOperator("/");
-});
-
-numberParentheses?.addEventListener("click", () => {
-    onClickParenthesis("");
-});
+// Exporte os elementos que os outros módulos precisarão
+export {
+    display,
+    numberClear, numberPorcent, numberEqual,
+    numberAdd, numberSub, numberMult, numberDiv, numberParentheses,
+    currentNumberHistory,
+    caracteres
+};
