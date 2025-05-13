@@ -7,45 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <header>
-            <h1 class="title_calculator">Calculadora</h1>
-            <p class="text_calculator">Desenvolvido por Je1n</p>
-            <p class="text_calculator">Versão 1.0</p>
-        </header>
-        <main>
-            <div id="display" class="display"></div>
-            <div class="container">
-                <div class="grid_calculator">
-                    <button class="operations_items" id="clear">C</button>
-                    <button class="operations_items" id="parenthesis">()</button>
-                    <button class="operations_items" id="porcent">%</button>
-                    <button class="numbers" id="number-1">1</button>
-                    <button class="numbers" id="number-2">2</button>
-                    <button class="numbers" id="number-3">3</button>
-                    <button class="numbers" id="number-4">4</button>
-                    <button class="numbers" id="number-5">5</button>
-                    <button class="numbers" id="number-6">6</button>
-                    <button class="numbers" id="number-7">7</button>
-                    <button class="numbers" id="number-8">8</button>
-                    <button class="numbers" id="number-9">9</button>
-                    <button class="numbers" id="number-0">0</button>
-                </div>
-        
-                <div class="operations_calculator">
-                    <button class="operations_items" id="divide">/</button>
-                    <button class="operations_items" id="multiply">*</button>
-                    <button class="operations_items" id="add">+</button>
-                    <button class="operations_items" id="subtract">-</button>
-                    <button class="operations_items" id="calculate">=</button>
-                </div>
+    <header>
+        <h1 class="title_calculator">Calculadora</h1>
+        <p class="text_calculator">Desenvolvido por Je1n</p>
+        <p class="text_calculator">Versão 1.0</p>
+    </header>
+    <main>
+        <div id="display" class="display"></div>
+        <div class="container">
+            <div class="grid_calculator">
+                <button id="clear" class="operations_items" data-value="C">C</button>
+                <button id="brackets" class="operations_items" data-value="()">()</button>
+                <button id="percentage" class="operations_items" data-value="%">%</button>
+                <button id="number-1" class="numbers" data-value="1">1</button>
+                <button id="number-2" class="numbers" data-value="2">2</button>
+                <button id="number-3" class="numbers" data-value="3">3</button>
+                <button id="number-4" class="numbers" data-value="4">4</button>
+                <button id="number-5" class="numbers" data-value="5">5</button>
+                <button id="number-6" class="numbers" data-value="6">6</button>
+                <button id="number-7" class="numbers" data-value="7">7</button>
+                <button id="number-8" class="numbers" data-value="8">8</button>
+                <button id="number-9" class="numbers" data-value="9">9</button>
+                <button id="number-0" class="numbers" data-value="0">0</button>
             </div>
-        </main>
+            <div class="operations_calculator">
+                <button class="operations_items" data-value="/">/</button>
+                <button class="operations_items" data-value="*">*</button>
+                <button class="operations_items" data-value="+">+</button>
+                <button class="operations_items" data-value="-">-</button>
+                <button class="operations_items" data-value="=">=</button>
+            </div>
+        </div>
+    </main>
     <aside class="history_calculator">
         <h2 class="history_title">Histórico</h2>
         <ul class="history_list" id="history_list"></ul>
     </aside>
-
-    
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
