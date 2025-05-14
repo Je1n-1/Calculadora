@@ -6,14 +6,13 @@ function inserttoDisplay(data, display) {
   }
 }
 
-export function setupOperationButtons(display, inserttoDisplay) {
-  const operationButtons = document.querySelectorAll('button[data-value]');
-  operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const value = button.getAttribute('data-value');
-      inserttoDisplay(value, display);
-    });
-  });
-}
+
+
+
+
+
+
+
+
 
 export { inserttoDisplay };
