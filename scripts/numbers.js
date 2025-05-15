@@ -1,14 +1,14 @@
+let numbers = [];
 // Função para configurar os botões numéricos
 function setupNumberButtons() {
-  
   // Seleciona todos os botões que possuem o atributo data-value
   const numberButtons = document.querySelectorAll('button[data-value]');
   // Adiciona um event listener de clique para cada botão
   numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-      
+      numbers.push(button.getAttribute('data-value'));
       // Exibe o botão clicado no console
-      console.log(button);
+      console.log(numbers);
       
     });
   });
@@ -32,3 +32,4 @@ function setupOperationButtons(display, inserttoDisplay) {
 // Exporta as funções para uso em outros arquivos
 export { setupNumberButtons };
 export { setupOperationButtons };
+export { numbers };
